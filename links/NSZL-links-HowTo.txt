@@ -1,0 +1,30 @@
+
+1. SPARQL query for http://setaria.oszk.hu/sparql
+
+PREFIX dcterms: <http://purl.org/dc/terms/>
+CONSTRUCT { ?S dcterms:identifier ?O }
+WHERE { 
+   ?S dcterms:identifier ?O 
+   FILTER ( regex(?O, "topomap.hu") || regex(?O, "corvina.oszk.hu") )
+}
+
+2. RDF conversion of NZSL files
+
+xsltproc ese2edm.xsl 92007_Ag_EU_TEL_a0109_TEL_OSZK_map.xml | xmllint --format - > 92007_Ag_EU_TEL_a0109_TEL_OSZK_map.rdf
+
+xsltproc ese2edm.xsl 92008_Ag_EU_TEL_a0110_TEL_OSZK_corvinas.xml | xmllint --format - > 92008_Ag_EU_TEL_a0110_TEL_OSZK_corvinas.rdf
+
+3. Load in RDF store
+
+4. Query
+
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ore:  <http://www.openarchives.org/ore/terms/>
+PREFIX dc:  <http://purl.org/dc/elements/1.1/>
+CONSTRUCT { ?RWO_Europena owl:sameAs ?RWO_NZSL }
+WHERE { 
+   ?RWO_NZSL dcterms:identifier ?I .
+   ?Proxy_Europeana dc:identifier ?I .
+   ?Proxy_Europeana ore:proxyFor ?RWO_Europena .
+}
