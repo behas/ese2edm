@@ -8,7 +8,7 @@ WHERE {
    FILTER ( regex(?O, "topomap.hu") || regex(?O, "corvina.oszk.hu") )
 }
 
-2. RDF conversion of NZSL files
+2. RDF conversion of Europeana ESE NZSL files
 
 xsltproc ese2edm.xsl 92007_Ag_EU_TEL_a0109_TEL_OSZK_map.xml | xmllint --format - > 92007_Ag_EU_TEL_a0109_TEL_OSZK_map.rdf
 
