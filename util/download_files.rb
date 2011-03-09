@@ -19,6 +19,7 @@ module ESE2EDM
         DEFAULT_OUTPUT_DIR = "xml/"
         DEFAULT_USERNAME = nil
         DEFAULT_PASSWORD = nil
+        DEFAULT_SKIP_DL_FILES = true 
 
         attr_reader :options
 
@@ -49,6 +50,11 @@ module ESE2EDM
               @options[:password] = password
             end
 
+            @options[:skip_dl_files] = DEFAULT_SKIP_DL_FILES
+            opts.on("-s", "--skip", "Skip already downloaded files") do |skip_dl_files|
+              @options[:skip_dl_files] = skip_dl_files
+            end
+            
             opts.on("-h", "--help", "Show this message") do
               puts opts
               exit
@@ -72,7 +78,7 @@ module ESE2EDM
       
       # Constructor
       def initialize(options, url_file)
-        raise ArgumentError.new("Mandatory URL file arguemnt missing") if url_file == nil
+        raise ArgumentError.new("Mandatory URL file argument missing") if url_file == nil
         raise ArgumentError.new("Exactly one URL file must be passed as argument") if url_file.size != 1
         @options = options
         @url_file = url_file[0]
@@ -93,15 +99,36 @@ module ESE2EDM
         # Reads the URL file and iteratively downloads the files
         File.open(@url_file, "r") do |file| 
           # each line should point to a file path
-          while url_string = file.gets
+          while line = file.gets
             
+            # remove record separator from the end of the line
+            line.chomp!
+            
+            # remove leading and trailing whitespaces
+            line.strip!
+                        
+            next if line.empty?
+
+            # skip comment lines
+            # FIXME: no idea why this 
+            next if line[0] == "#" or line[1] == "#"
+                        
             # create an URL object
-            url = URI.parse(url_string.chomp!)
+            url = URI.parse(line)
             
             # extracts the filename from the URL path
             filename = File.basename(url.path)
             
-            $LOG.info("Downloading #{url}...")
+            # define the outputfile
+            outputfile = @options[:output_dir] + "/" + filename
+                        
+            # skip file download if option -s is true and file already exists
+            if @options[:skip_dl_files] and File.exists?(outputfile)
+              $LOG.info("Skipping already downloaded #{outputfile}...")
+              next
+            end
+            
+            $LOG.info("Downloading #{url} to #{outputfile}...")
             
             # downloads the file to the output directory
             Net::HTTP.start(url.host) { |http|
@@ -112,7 +139,7 @@ module ESE2EDM
               response = http.request(req)
               case response
                   when Net::HTTPSuccess, Net::HTTPRedirection
-                    File.open(@options[:output_dir] + "/" + filename, "wb") { |file|
+                    File.open(outputfile, "wb") { |file|
                       file.write(response.body)
                      }
                   else
