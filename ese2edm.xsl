@@ -29,6 +29,9 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 	<!-- define the Europena BASE URI as global variable -->
 	<xsl:variable name="EUROPEANA_BASE_URI" select="'http://www.europeana.eu'" />
 	
+	<!-- define the EDM base URI as global variable -->
+	<xsl:variable name="EDM_BASE_URI" select="'http://id.europeana.eu'" />
+	
 	<!-- template matching the root node and create the RDF start tag -->
 	<xsl:template match="/">
 
@@ -43,16 +46,7 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 		
 	<!-- template matching a single ESE XML record -->
 	<xsl:template match="metadata/record">
-		
-		<!-- define the base URIs for the EDM resources if they are not passed as parameter by the xslt processor
-		no idea how to define this globally because xsl:choose can only be applied within a template -->
-		<xsl:choose>
-			<xsl:when test="not($EDM_BASE_URI)"> <!-- parameter has not been supplied -->
-				<xsl:variable name="EDM_BASE_URI" select="'http://id.europeana.eu'" />
-			</xsl:when>
-			<xsl:otherwise/>
-		</xsl:choose>
-		
+				
 		<!-- determine the instituteID and objectIDhash from the European URI of this record -->
 		<xsl:variable name="OBJECTID_HASH">
 			<xsl:value-of select="substring-after(substring-after(ese:uri,'/record/'),'/')"/>

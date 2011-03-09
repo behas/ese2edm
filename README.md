@@ -58,12 +58,21 @@ Use the -p option to output a pretty-printed RDF/XML document with XML indentati
 	
 Use the -o option to define a custom RDF/XML output directory
 
-	ruby ese2edm.rb -o somedir/ samples/00000_europeana_test_ese.xml
-	
-Use the -u to assign a custom base URI to the generated EDM resources
+	ruby ese2edm.rb -o somedir/ samples/00000_europeana_test_ese.xml	
 
-	ruby ese2edm.rb -u http://example.com samples/*.xml
-	
+
+## Using the ese2edm.xsl stylesheet without the script
+
+For converting a single ESE XML files using the ese2edm.xsl stylesheet use
+
+  xsltproc ese2edm.xsl samples/00000_europeana_test_ese.xml | xmllint --format - > samples/00000_europeana_test_ese.rdf
+  
+for pretty-printed output, or
+
+  xsltproc ese2edm.xsl samples/00000_europeana_test_ese.xml > samples/00000_europeana_test_ese.rdf
+  
+for compact output.
+
 
 ## Where to get the ESE files from
 

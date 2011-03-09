@@ -25,7 +25,6 @@ module ESE2EDM
       DEFAULT_LOG_FILE = "ese2edm_#{Time.now.localtime.strftime("%Y-%m-%d")}.log"
       DEFAULT_BATCH_FILE = nil
       DEFAULT_PRETTY_PRINT = false
-      DEFAULT_BASE_URI = "http://id.europeana.eu"
   
       attr_reader :options
   
@@ -54,11 +53,6 @@ module ESE2EDM
           @options[:batch_file] = DEFAULT_BATCH_FILE
           opts.on("-b", "--batch-list-file [BATCH_LIST_FILE]", String, "A pointer to a file containing a list of links to the files that need to be converted") do |batch_file|
             @options[:batch_file] = batch_file
-          end
-
-          @options[:base_uri] = DEFAULT_BASE_URI
-          opts.on("-u", "--base-URI [BASE_URI]", String, "The base URI to be applied for the EDM records (e.g., http://id.europeana.eu)") do |base_uri|
-            @options[:base_uri] = base_uri
           end
           
           @options[:dump] = false
@@ -187,9 +181,9 @@ module ESE2EDM
       begin
         $LOG.info("Converting #{file} to EDM. Saving result in #{output_file}...")
         if pretty_print
-          `xsltproc --stringparam EDM_BASE_URI #{base_uri} #{stylesheet} #{file} | xmllint --format - > #{output_file}`
+          `xsltproc #{stylesheet} #{file} | xmllint --format - > #{output_file}`
         else
-          `xsltproc --stringparam EDM_BASE_URI #{base_uri} #{stylesheet} #{file} > #{output_file}`
+          `xsltproc #{stylesheet} #{file} > #{output_file}`
         end
       rescue Exception => e
         $LOG.error(e.message)
