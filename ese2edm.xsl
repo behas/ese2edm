@@ -25,12 +25,11 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 	version="1.0">
 	
 	<xsl:output method="xml" encoding="UTF-8" indent="yes"/>
-	
+<!-- NEW -->	
 	<!-- define the Europena BASE URI as global variable -->
 	<xsl:variable name="EUROPEANA_BASE_URI" select="'http://www.europeana.eu'" />
-	
 	<!-- define the EDM base URI as global variable -->
-	<xsl:variable name="EDM_BASE_URI" select="'http://id.europeana.eu'" />
+	<xsl:variable name="EDM_BASE_URI" select="'http://data.europeana.eu'" />
 	
 	<!-- template matching the root node and create the RDF start tag -->
 	<xsl:template match="/">
@@ -60,20 +59,33 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 		<xsl:variable name="landing_page_uri" select="concat($EUROPEANA_BASE_URI, '/', 'portal/record/', $INSTITUTE_ID, '/', $OBJECTID_HASH,'.html')"/>
 		
 		<xsl:variable name="object_uri" select="concat($EDM_BASE_URI, '/', 'europeana/', $INSTITUTE_ID, '/item/', $OBJECTID_HASH)"/>
-		<xsl:variable name="provider_agg_uri" select="concat($EDM_BASE_URI, '/', $INSTITUTE_ID, '/aggregation/', $OBJECTID_HASH)"/>
-		<xsl:variable name="provider_proxy_uri" select="concat($EDM_BASE_URI, '/', $INSTITUTE_ID, '/proxy/', $OBJECTID_HASH)"/>
+		<xsl:variable name="europeana_resourcemap_uri" select="concat($EDM_BASE_URI, '/', 'europeana/', $INSTITUTE_ID, '/rm/', $OBJECTID_HASH)"/>
+		<xsl:variable name="provider_agg_uri" select="concat($EDM_BASE_URI, '/', 'provider/',  $INSTITUTE_ID, '/aggregation/', $OBJECTID_HASH)"/>
+		<xsl:variable name="provider_proxy_uri" select="concat($EDM_BASE_URI, '/', 'provider/',  $INSTITUTE_ID, '/proxy/', $OBJECTID_HASH)"/>
 		<xsl:variable name="europeana_agg_uri" select="concat($EDM_BASE_URI, '/', 'europeana/', $INSTITUTE_ID, '/aggregation/', $OBJECTID_HASH)"/>
 		<xsl:variable name="europeana_proxy_uri" select="concat($EDM_BASE_URI, '/','europeana/', $INSTITUTE_ID, '/proxy/', $OBJECTID_HASH)"/>
+
 
 		<!-- ...and produce a self-contained RDF/XML file out of it -->
 
 		<!-- Step1: OBJECT -->
-		<ens:PhysicalThing>
+		<rdf:Description>
 			<xsl:attribute name="rdf:about"><xsl:copy-of select="$object_uri"/></xsl:attribute>
 			<foaf:isPrimaryTopicOf>
 				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$record_uri"/></xsl:attribute>
 			</foaf:isPrimaryTopicOf>
-		</ens:PhysicalThing>
+<!-- NEW -->
+			<foaf:isPrimaryTopicOf>
+				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$europeana_resourcemap_uri"/></xsl:attribute>
+			</foaf:isPrimaryTopicOf>
+			<!-- Step 3: link provider aggregation with provider proxy -->
+			<ens:hasProxy>
+				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$provider_proxy_uri"/></xsl:attribute>
+			</ens:hasProxy>
+			<ens:hasProxy>
+				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$europeana_proxy_uri"/></xsl:attribute>
+			</ens:hasProxy>
+		</rdf:Description>
 
 			
 		<!-- Step1: PROVIDER AGGREGATION -->
@@ -84,6 +96,11 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 			<ore:aggregatedCHO>
 				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$object_uri"/></xsl:attribute>
 			</ore:aggregatedCHO>
+<!-- NEW -->
+			<!-- Step 3: link provider aggregation with provider proxy -->
+			<ens:featuresProxy>
+				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$provider_proxy_uri"/></xsl:attribute>
+			</ens:featuresProxy>
 			
 			<!-- Mapping of original ESE fields -->
 			<xsl:for-each select="ese:dataProvider">
@@ -166,7 +183,7 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 
 <!-- NEW -->
 			<ore:isDescribedBy>
-				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$record_uri"/></xsl:attribute>
+				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$europeana_resourcemap_uri"/></xsl:attribute>
 			</ore:isDescribedBy>
 
 			<!-- Step 3: link europeana aggregation with provider's aggregation -->
@@ -195,7 +212,9 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 
 <!-- NEW -->
 			<xsl:for-each select="ese:object">
-			<xsl:variable name="thumbnail_uri" select="concat('http://europeanastatic.eu/api/image?uri=',.,'&amp;size=FULL_DOC&amp;type=IMAGE')"/>			 
+			  <xsl:if test='../ese:type'>
+			    <xsl:variable name="ese_type"><xsl:value-of select="../ese:type"/></xsl:variable>
+			    <xsl:variable name="thumbnail_uri" select="concat('http://europeanastatic.eu/api/image?uri=',.,'&amp;size=FULL_DOC&amp;type=',$ese_type)"/>			 
 				<ens:hasView>
 					<xsl:attribute name="rdf:resource">
 						<xsl:copy-of select="$thumbnail_uri"/>
@@ -208,6 +227,7 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 					  </xsl:attribute>
 					</foaf:thumbnail>
 				</foaf:depiction>
+			  </xsl:if>
 			</xsl:for-each>
 			
 			<!-- Mapping of original ESE fields -->
@@ -251,7 +271,7 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 <!-- NEW -->
 		<!-- Step X: RESOURCE MAP -->
 		<ore:ResourceMap>
-			<xsl:attribute name="rdf:about"><xsl:copy-of select="$record_uri"/></xsl:attribute>
+			<xsl:attribute name="rdf:about"><xsl:copy-of select="$europeana_resourcemap_uri"/></xsl:attribute>
 				
 			<foaf:primaryTopic>
 				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$object_uri"/></xsl:attribute>
@@ -265,7 +285,7 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 				<xsl:attribute name="rdf:resource">http://creativecommons.org/publicdomain/zero/1.0/</xsl:attribute>
 			</xhtml:license>
 
-			<dc:creator>Europeana</dc:creator>
+			<dc:publisher>Europeana</dc:publisher>
 			<xsl:for-each select="ese:provider">
 				<dc:contributor><xsl:value-of select="."/></dc:contributor>
 			</xsl:for-each>
