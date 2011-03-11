@@ -74,6 +74,15 @@ for pretty-printed output, or
 for compact output.
 
 
+## Creating links for EDM collection files
+
+After having converted the ESE XML files into a set of RDF/XML files you can use [Silk][silk] to link them with resources in other datasets.
+
+Make sure you have downloaded Silk (_silk.jar_) and created a [linking specification][silk-spec] for the specific collection file, and then start the linking process.
+
+  java -DconfigFile=links/00000_europeana_test_ese_linkspec.xml -jar silk.jar
+
+
 ## Where to get the ESE files from
 
 The Europeana raw ESE data files are stored in an SVN repository (http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/) that is currently not publicly accessible.
@@ -81,3 +90,9 @@ The Europeana raw ESE data files are stored in an SVN repository (http://sandbox
 If you have the necessary access privileges you can use the `download_files.rb` script to download these files via HTTP.
 
 	ruby util/download_files.rb -o xml/ -u username -p password datasets/edm-datasets-1.0.txt
+
+# Links & References
+
+
+[silk]: http://www4.wiwiss.fu-berlin.de/bizer/silk/ "The Silk Link Discovery Framework"
+[silk-spec]: http://www4.wiwiss.fu-berlin.de/bizer/silk/spec/ "Silk Language Specification 2.0" 

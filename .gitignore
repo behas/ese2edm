@@ -1,1 +1,6 @@
 ese_xml/
+.DS_Store
+*.log
+silk.jar
+rdf/
+instanceCache/
