@@ -25,7 +25,7 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 	version="1.0">
 	
 	<xsl:output method="xml" encoding="UTF-8" indent="yes"/>
-<!-- NEW -->	
+
 	<!-- define the Europena BASE URI as global variable -->
 	<xsl:variable name="EUROPEANA_BASE_URI" select="'http://www.europeana.eu'" />
 	<!-- define the EDM base URI as global variable -->
@@ -58,12 +58,12 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 		<xsl:variable name="record_uri" select="concat($EUROPEANA_BASE_URI, '/', 'resolve/record/', $INSTITUTE_ID, '/', $OBJECTID_HASH)"/>
 		<xsl:variable name="landing_page_uri" select="concat($EUROPEANA_BASE_URI, '/', 'portal/record/', $INSTITUTE_ID, '/', $OBJECTID_HASH,'.html')"/>
 		
-		<xsl:variable name="object_uri" select="concat($EDM_BASE_URI, '/', 'europeana/', $INSTITUTE_ID, '/item/', $OBJECTID_HASH)"/>
-		<xsl:variable name="europeana_resourcemap_uri" select="concat($EDM_BASE_URI, '/', 'europeana/', $INSTITUTE_ID, '/rm/', $OBJECTID_HASH)"/>
-		<xsl:variable name="provider_agg_uri" select="concat($EDM_BASE_URI, '/', 'provider/',  $INSTITUTE_ID, '/aggregation/', $OBJECTID_HASH)"/>
-		<xsl:variable name="provider_proxy_uri" select="concat($EDM_BASE_URI, '/', 'provider/',  $INSTITUTE_ID, '/proxy/', $OBJECTID_HASH)"/>
-		<xsl:variable name="europeana_agg_uri" select="concat($EDM_BASE_URI, '/', 'europeana/', $INSTITUTE_ID, '/aggregation/', $OBJECTID_HASH)"/>
-		<xsl:variable name="europeana_proxy_uri" select="concat($EDM_BASE_URI, '/','europeana/', $INSTITUTE_ID, '/proxy/', $OBJECTID_HASH)"/>
+		<xsl:variable name="object_uri" select="concat($EDM_BASE_URI, '/', 'item', '/', 'europeana', '/', $INSTITUTE_ID, '/', $OBJECTID_HASH)"/>
+		<xsl:variable name="europeana_resourcemap_uri" select="concat($EDM_BASE_URI, '/', 'rm', '/', 'europeana', '/', $INSTITUTE_ID, '/', $OBJECTID_HASH)"/>
+		<xsl:variable name="provider_agg_uri" select="concat($EDM_BASE_URI, '/', 'aggregation', '/', 'provider', '/', $INSTITUTE_ID, '/', $OBJECTID_HASH)"/>
+		<xsl:variable name="provider_proxy_uri" select="concat($EDM_BASE_URI, '/', 'proxy', '/', 'provider', '/', $INSTITUTE_ID, '/', $OBJECTID_HASH)"/>
+		<xsl:variable name="europeana_agg_uri" select="concat($EDM_BASE_URI, '/', 'aggregation', '/', 'europeana', '/', $INSTITUTE_ID, '/', $OBJECTID_HASH)"/>
+		<xsl:variable name="europeana_proxy_uri" select="concat($EDM_BASE_URI, '/', 'proxy', '/', 'europeana', '/', $INSTITUTE_ID, '/', $OBJECTID_HASH)"/>
 
 
 		<!-- ...and produce a self-contained RDF/XML file out of it -->
@@ -74,20 +74,11 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 			<foaf:isPrimaryTopicOf>
 				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$record_uri"/></xsl:attribute>
 			</foaf:isPrimaryTopicOf>
-<!-- NEW -->
 			<foaf:isPrimaryTopicOf>
 				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$europeana_resourcemap_uri"/></xsl:attribute>
 			</foaf:isPrimaryTopicOf>
-			<!-- Step 3: link provider aggregation with provider proxy -->
-			<ens:hasProxy>
-				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$provider_proxy_uri"/></xsl:attribute>
-			</ens:hasProxy>
-			<ens:hasProxy>
-				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$europeana_proxy_uri"/></xsl:attribute>
-			</ens:hasProxy>
 		</rdf:Description>
 
-			
 		<!-- Step1: PROVIDER AGGREGATION -->
 		<ore:Aggregation>
 			<xsl:attribute name="rdf:about"><xsl:copy-of select="$provider_agg_uri"/></xsl:attribute>
@@ -96,11 +87,6 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 			<ore:aggregatedCHO>
 				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$object_uri"/></xsl:attribute>
 			</ore:aggregatedCHO>
-<!-- NEW -->
-			<!-- Step 3: link provider aggregation with provider proxy -->
-			<ens:featuresProxy>
-				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$provider_proxy_uri"/></xsl:attribute>
-			</ens:featuresProxy>
 			
 			<!-- Mapping of original ESE fields -->
 			<xsl:for-each select="ese:dataProvider">
