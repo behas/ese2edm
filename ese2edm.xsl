@@ -58,7 +58,7 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 		<xsl:variable name="record_uri" select="concat($EUROPEANA_BASE_URI, '/', 'resolve/record/', $INSTITUTE_ID, '/', $OBJECTID_HASH)"/>
 		<xsl:variable name="landing_page_uri" select="concat($EUROPEANA_BASE_URI, '/', 'portal/record/', $INSTITUTE_ID, '/', $OBJECTID_HASH,'.html')"/>
 		
-		<xsl:variable name="object_uri" select="concat($EDM_BASE_URI, '/', 'item', '/', 'europeana', '/', $INSTITUTE_ID, '/', $OBJECTID_HASH)"/>
+		<xsl:variable name="object_uri" select="concat($EDM_BASE_URI, '/', 'item', '/', $INSTITUTE_ID, '/', $OBJECTID_HASH)"/>
 		<xsl:variable name="europeana_resourcemap_uri" select="concat($EDM_BASE_URI, '/', 'rm', '/', 'europeana', '/', $INSTITUTE_ID, '/', $OBJECTID_HASH)"/>
 		<xsl:variable name="provider_agg_uri" select="concat($EDM_BASE_URI, '/', 'aggregation', '/', 'provider', '/', $INSTITUTE_ID, '/', $OBJECTID_HASH)"/>
 		<xsl:variable name="provider_proxy_uri" select="concat($EDM_BASE_URI, '/', 'proxy', '/', 'provider', '/', $INSTITUTE_ID, '/', $OBJECTID_HASH)"/>
