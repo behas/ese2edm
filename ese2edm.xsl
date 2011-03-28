@@ -3,12 +3,12 @@
 
 Europeana ESE to EDM Mapping stylesheet
 
-This specifications reflects the mapping specifications defined at http://europeanalabs.eu/wiki/EDMPrototypingTask15?version=18
+This specifications reflects the mapping specifications defined at http://europeanalabs.eu/wiki/EDMPrototypingTask15?version=29
 
 WARNING: due to a bug in the ESE XML source data at the time of its creation, this stylesheet uses a wrong ESE namespace abbreviation (http://www.europeana.eu instead of "http://www.europeana.eu/schemas/ese/).
 
-Version: 0.4
-Date: 2011-03-02
+Version: 0.5
+Date: 2011-03-29
 Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 
 -->
@@ -242,9 +242,6 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 			</ore:proxyIn>
 				
 			<!-- Mapping of original ESE fields -->
-			<xsl:for-each select="ese:type">
-				<ens:type><xsl:value-of select="."/></ens:type>
-			</xsl:for-each>
 			<xsl:for-each select="ese:userTag">
 				<ens:userTag><xsl:value-of select="."/></ens:userTag>
 			</xsl:for-each>

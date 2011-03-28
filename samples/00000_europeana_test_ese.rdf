@@ -41,7 +41,6 @@
   <ore:Proxy rdf:about="http://data.europeana.eu/proxy/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154">
     <ore:proxyFor rdf:resource="http://data.europeana.eu/item/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154"/>
     <ore:proxyIn rdf:resource="http://data.europeana.eu/aggregation/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154"/>
-    <ens:type>IMAGE</ens:type>
   </ore:Proxy>
   <ore:ResourceMap rdf:about="http://data.europeana.eu/rm/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154">
     <foaf:primaryTopic rdf:resource="http://data.europeana.eu/item/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154"/>
