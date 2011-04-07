@@ -3,12 +3,12 @@
 
 Europeana ESE to EDM Mapping stylesheet
 
-This specifications reflects the mapping specifications defined at http://europeanalabs.eu/wiki/EDMPrototypingTask15?version=29
+This specifications reflects the mapping specifications defined at http://europeanalabs.eu/wiki/EDMPrototypingTask15
 
 WARNING: due to a bug in the ESE XML source data at the time of its creation, this stylesheet uses a wrong ESE namespace abbreviation (http://www.europeana.eu instead of "http://www.europeana.eu/schemas/ese/).
 
-Version: 0.5
-Date: 2011-03-29
+Version: 1.0
+Date: 2011-04-08
 Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 
 -->
@@ -167,7 +167,6 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$object_uri"/></xsl:attribute>
 			</ore:aggregatedCHO>
 
-<!-- NEW -->
 			<ore:isDescribedBy>
 				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$europeana_resourcemap_uri"/></xsl:attribute>
 			</ore:isDescribedBy>
@@ -196,7 +195,6 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 				</ens:isShownBy>
 			</xsl:for-each>
 
-<!-- NEW -->
 			<xsl:for-each select="ese:object">
 			  <xsl:if test='../ese:type'>
 			    <xsl:variable name="ese_type"><xsl:value-of select="../ese:type"/></xsl:variable>
@@ -251,8 +249,7 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 				
 		</ore:Proxy>	
 
-<!-- NEW -->
-		<!-- Step X: RESOURCE MAP -->
+		<!-- Step 6: RESOURCE MAP -->
 		<ore:ResourceMap>
 			<xsl:attribute name="rdf:about"><xsl:copy-of select="$europeana_resourcemap_uri"/></xsl:attribute>
 				
