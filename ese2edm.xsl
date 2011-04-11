@@ -186,15 +186,6 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 				</xsl:attribute>
 			</ens:landingPage>
 
-			<!-- Step 4: ens:isShownBy with the thumbnail URL as object -->
-			<xsl:for-each select="ese:isShownBy">
-				<ens:isShownBy>
-					<xsl:attribute name="rdf:resource">
-						<xsl:value-of select="."/>
-					</xsl:attribute>
-				</ens:isShownBy>
-			</xsl:for-each>
-
 			<xsl:for-each select="ese:object">
 			  <xsl:if test='../ese:type'>
 			    <xsl:variable name="ese_type"><xsl:value-of select="../ese:type"/></xsl:variable>

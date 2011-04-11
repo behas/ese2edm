@@ -34,7 +34,6 @@
     <ore:aggregates rdf:resource="http://data.europeana.eu/aggregation/provider/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154"/>
     <dc:creator>Europeana</dc:creator>
     <ens:landingPage rdf:resource="http://www.europeana.eu/portal/record/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154.html"/>
-    <ens:isShownBy rdf:resource="http://www.mcw.gov.cy/mcw/da/da.nsf/All/8308A7AB9CA6CB5EC22574CC003FF5E1/$file/02-Lemba-Lakkous-Lady.jpg?OpenElement"/>
     <ens:country>cyprus</ens:country>
     <ens:language>gr</ens:language>
   </ens:EuropeanaAggregation>

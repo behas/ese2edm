@@ -28,7 +28,6 @@
 <http://data.europeana.eu/aggregation/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://www.openarchives.org/ore/terms/aggregates> <http://data.europeana.eu/aggregation/provider/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> .
 <http://data.europeana.eu/aggregation/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://purl.org/dc/elements/1.1/creator> "Europeana" .
 <http://data.europeana.eu/aggregation/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://www.europeana.eu/schemas/edm/landingPage> <http://www.europeana.eu/portal/record/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154.html> .
-<http://data.europeana.eu/aggregation/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://www.europeana.eu/schemas/edm/isShownBy> <http://www.mcw.gov.cy/mcw/da/da.nsf/All/8308A7AB9CA6CB5EC22574CC003FF5E1/$file/02-Lemba-Lakkous-Lady.jpg?OpenElement> .
 <http://data.europeana.eu/aggregation/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://www.europeana.eu/schemas/edm/country> "cyprus" .
 <http://data.europeana.eu/aggregation/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://www.europeana.eu/schemas/edm/language> "gr" .
 <http://data.europeana.eu/proxy/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openarchives.org/ore/terms/Proxy> .
