@@ -21,7 +21,7 @@ module ESE2EDM
 
       DEFAULT_OUTPUT_DIR = "rdf/"
       DEFAULT_STYLESHEET = "ese2edm.xsl"
-      DEFAULT_NT_DUMP_FILE = "europeana_edm_#{Time.now.localtime.strftime("%Y-%m-%d")}.nt"
+      DEFAULT_NT_DUMP_FILE = DEFAULT_OUTPUT_DIR + "europeana_edm_#{Time.now.localtime.strftime("%Y-%m-%d")}.nt"
       DEFAULT_LOG_FILE = "ese2edm_#{Time.now.localtime.strftime("%Y-%m-%d")}.log"
       DEFAULT_BATCH_FILE = nil
       DEFAULT_PRETTY_PRINT = false
@@ -41,7 +41,7 @@ module ESE2EDM
           opts.banner = "Usage: ruby ese2edm.rb [options] ese_xml_files (e.g., ../xml/sample_dir/esefile.xml)"
 
           @options[:output_dir] = DEFAULT_OUTPUT_DIR
-          opts.on("-o", "--output-dir [OUTPUT_DIRECTORY]", "The file where the generated EDM RDF/XML files are stored")  do |output_dir|
+          opts.on("-o", "--output-dir [OUTPUT_DIRECTORY]", "The file where the converted files are stored")  do |output_dir|
             @options[:output_dir] = output_dir
           end        
 
@@ -56,7 +56,7 @@ module ESE2EDM
           end
           
           @options[:dump] = false
-          opts.on("-d", "--dump", "Combine all generated ESE RDF/XML files into a single NT-dump file")  do |dump|
+          opts.on("-d", "--dump", "Combine all converted files into a single NT-dump file")  do |dump|
             @options[:dump] = dump
           end        
 
@@ -160,7 +160,7 @@ module ESE2EDM
         
         $LOG.info("Merging created RDF/XML files into N-TRIPLES dump file: #{@options[:nt_dump_file]} ...")
         
-        create_NT_dump(converted_files, @options[:nt_dump_file])
+        create_NT_dump(converted_files, @options[:output_dir], @options[:nt_dump_file])
         
         $LOG.info("*** Finished N-TRIPLES dumping *** Dumped #{source_ese_files.size} RDF/XML files into #{@options[:nt_dump_file]}")
       
@@ -193,22 +193,20 @@ module ESE2EDM
       
     end #end of transform
     
-    # Combines a given set of RDF/XML files into a single N-Triples dump file
-    def create_NT_dump(rdf_xml_files, output_file)
+    # Converts a set of RDF/XML files to N-TRIPLE and dumps them into a single file
+    def create_NT_dump(rdf_xml_files, output_dir, dump_file)
       
       rdf_xml_files.each do |rdfxml_file|
         
-        tempNTfile = rdfxml_file + ".nt"
-
-        $LOG.info("Creating temporary NT file #{tempNTfile} ...")
-        `rapper #{rdfxml_file} > #{tempNTfile}`
+        basename = File.basename(rdfxml_file, ".rdf")
+        nt_file = output_dir + basename + ".nt"
         
-        $LOG.info("Adding #{tempNTfile} temporary NT-file to #{output_file} ...")
-        `cat #{tempNTfile} >> #{output_file}`
+        $LOG.info("Creating N-TRIPLE file #{nt_file} ...")
+        `rapper #{rdfxml_file} > #{nt_file}`
         
-        $LOG.info("Deleting temporary NT file #{tempNTfile} ...")
-        FileUtils.rm tempNTfile
-        
+        $LOG.info("Adding #{nt_file} to #{dump_file} ...")
+        `cat #{nt_file} >> #{dump_file}`
+                
       end
 
     end
@@ -226,48 +224,3 @@ converter = ESE2EDM::Converter.new(options, ARGV)
 
 # execute the conversion
 converter.convert
-
-
-
-
-
-# $LOG = Logger.new('ese2edm.log', 'monthly')
-# $LOG.level = Logger::INFO
-# 
-# FILE_LIST = "files2convert.txt"
-# 
-# OUTPUT_DIR = "rdf/"
-# 
-# # create the output directory
-# if !File.directory? OUTPUT_DIR
-#   Dir.mkdir(OUTPUT_DIR)
-# end
-# 
-# # go through each file in the list and call the external conversion command
-# 
-# 
-# File.open(FILE_LIST) do |file| 
-#     
-#   while line = file.gets
-#     
-#     # parse the path
-#     path = line[line.rindex("\t")+1..line.length]
-#     path.strip!
-#     
-#     # extract the base name (without xml suffix)
-#     basename = File.basename(path, ".xml")
-#     
-#     begin
-#       
-#       $LOG.info("Converting #{path} to EDM")
-#       `xsltproc ese2edm.xsl #{path} > #{OUTPUT_DIR}#{basename}.rdf`
-#       
-#     rescue Exception => e
-#       $LOG.error(e.message)
-#     end
-# 
-#   end
-# 
-#   $LOG.info("Finished conversion")
-# 
-# end
