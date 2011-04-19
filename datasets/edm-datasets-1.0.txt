@@ -1,4 +1,4 @@
-﻿#The European Library data sets
+#The European Library data sets
 
 #Austria
 http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92060_Ag_EU_TEL_a0478_Austria/output_xml/92060_Ag_EU_TEL_a0478_Austria.xml
@@ -59,7 +59,9 @@ http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92037_Ag_EU_TEL_a0444_Brit
 #eLocal datasets
 
 #Hispana (Ministry of Culture – Spain)
-http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09407_Ag_ES_ELocal/output_xml/09407_Ag_ES_ELocal.xml.gz
+http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09407a_Ag_ES_ELocal_esegen/output_xml/09407a_Ag_ES_ELocal_esegen.xml
+http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09407b_Ag_ES_ELocal_esebvph/output_xml/09407b_Ag_ES_ELocal_esebvph.xml
+http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09407c_Ag_ES_ELocal_eseceres/output_xml/09407c_Ag_ES_ELocal_eseceres.xml
 
 #Federacja Bibliotek Cyfrowych Poland
 http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09404_Ag_PL_ELocal/output_xml/09404_Ag_PL_ELocal.xml.gz
