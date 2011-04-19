@@ -76,6 +76,9 @@ http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09435_Ag_NO_ELocal/output_
 #Erfgoedplus.be, province of Limburg Belgium
 http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09421_Ag_BE_Elocal/output_xml/09421_Ag_BE_Elocal.xml
 
+#Tyne and Wear museum UK
+http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09405p_Ag_UK_ELocal_TyneWearImagine/output_xml/09405p_Ag_UK_ELocal_TyneWearImagine.xml
+
 #European Film Gateway
 
 #Det Danske Filminstitut / Danish Film Institute
