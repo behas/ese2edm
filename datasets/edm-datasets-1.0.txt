@@ -76,8 +76,30 @@ http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09435_Ag_NO_ELocal/output_
 #Erfgoedplus.be, province of Limburg Belgium
 http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09421_Ag_BE_Elocal/output_xml/09421_Ag_BE_Elocal.xml
 
-#Tyne and Wear museum UK
+
+#CultureGrid
+
+#Culture Shock
+http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09405e_Ag_UK_ELocal_TWAM-CS/output_xml/09405e_Ag_UK_ELocal_TWAM-CS.xml
+
+#Memorynet
+http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09405f_Ag_UK_ELocal_TWAM-MN/output_xml/09405f_Ag_UK_ELocal_TWAM-MN.xml
+
+#Jewish Lives
+http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09405g_Ag_UK_ELocal_TWAM-JL/output_xml/09405g_Ag_UK_ELocal_TWAM-JL.xml
+
+#Discovering Bewick
+http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09405h_Ag_UK_ELocal_TWAM-DB/output_xml/09405h_Ag_UK_ELocal_TWAM-DB.xml
+
+#Tyne &Wear Archive and museum
+http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09405i_Ag_UK_ELocal_TWAM-AOL/output_xml/09405i_Ag_UK_ELocal_TWAM-AOL.xml
+
+#Geofinder
+http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09405j_Ag_UK_ELocal_TWAM-GF/output_xml/09405j_Ag_UK_ELocal_TWAM-GF.xml
+
+#Tyne & Wear Imagine
 http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09405p_Ag_UK_ELocal_TyneWearImagine/output_xml/09405p_Ag_UK_ELocal_TyneWearImagine.xml
+
 
 #European Film Gateway
 
