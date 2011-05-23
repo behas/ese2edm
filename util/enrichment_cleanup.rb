@@ -73,7 +73,8 @@ module ESE2EDM
       # Performs the cleanup
       def cleanup
         
-        uris = Array.new
+        # hash for lookup
+        uris = {}
         
         # Reads the URIs defined by the URI file into memory
         File.open(@uri_file, "r") do |file| 
@@ -83,7 +84,7 @@ module ESE2EDM
             # remove leading and trailing whitespaces
             line.strip!
             
-            uris << line
+            uris[line] = 0
           end
         end
         
@@ -99,10 +100,10 @@ module ESE2EDM
               # split the line into subject[0] predicate[1] object[2]
               spo = line.split
 
-              if uris.include?(spo[0])
+              if uris.has_key?(spo[0])
                 output_file.puts line
               end
-
+              
             end
           end
         end
