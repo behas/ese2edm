@@ -1,4 +1,5 @@
-ese_xml/
+enrichment
+xml/
 .DS_Store
 *.log
 silk.jar
