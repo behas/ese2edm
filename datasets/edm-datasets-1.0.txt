@@ -117,6 +117,9 @@ http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/00502_L_GR_UniPatras_pleia
 http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/91622_Ag_SE_SwedishNationalHeritage_raa_kmb/output_xml/91622_Ag_SE_SwedishNationalHeritage_raa_kmb.xml
 http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/91611_Ag_SE_SwedishNationalHeritage_fornvannen/output_xml/91611_Ag_SE_SwedishNationalHeritage_fornvannen.xml
 
+#ESE test items
+http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/00000_europeana_test_ese/output_xml/00000_europeana_test_ese.xml
+
 
 
 
