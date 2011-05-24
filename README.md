@@ -80,7 +80,7 @@ After having converted the ESE XML files into a set of RDF/XML files you can use
 
 Make sure you have downloaded Silk (_silk.jar_) and created a [linking specification][silk-spec] for the specific collection file, and then start the linking process.
 
-    java -DconfigFile=links/00000_europeana_test_ese_linkspec.xml -jar silk.jar
+    java -DconfigFile=linking/00000_europeana_test_ese_linkspec.xml -jar silk.jar
 
 
 ## Where to get the ESE files from
