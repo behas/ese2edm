@@ -84,9 +84,9 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 			<xsl:attribute name="rdf:about"><xsl:copy-of select="$provider_agg_uri"/></xsl:attribute>
 				
 			<!-- Step 3: link provider aggregation with ens:Object/PhysicalThing -->
-			<ore:aggregatedCHO>
+			<ens:aggregatedCHO>
 				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$object_uri"/></xsl:attribute>
-			</ore:aggregatedCHO>
+			</ens:aggregatedCHO>
 			
 			<!-- Mapping of original ESE fields -->
 			<xsl:for-each select="ese:dataProvider">
@@ -163,9 +163,9 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 			<xsl:attribute name="rdf:about"><xsl:copy-of select="$europeana_agg_uri"/></xsl:attribute>
 				
 			<!-- Step 3: link europeana aggregation with ens:Object/PhysicalThing -->
-			<ore:aggregatedCHO>
+			<ens:aggregatedCHO>
 				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$object_uri"/></xsl:attribute>
-			</ore:aggregatedCHO>
+			</ens:aggregatedCHO>
 
 			<ore:isDescribedBy>
 				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$europeana_resourcemap_uri"/></xsl:attribute>
