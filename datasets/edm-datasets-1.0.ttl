@@ -1,0 +1,72 @@
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix wv: <http://vocab.org/waiver/terms/norms> .        
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+
+@prefix eulod: <http://data.europeana.eu/conf#> .
+@prefix : <http://data.europeana.eu/void.ttl#> .
+
+:Bernhard a foaf:Person ;
+  rdfs:label "Bernhard Haslhofer" ;
+  foaf:mbox <mailto:bernhard.haslhofer@cornell.edu> ;
+  .
+  
+:Antoine a foaf:Person ;
+  rdfs:label "Antoine Isaac" ;
+  foaf:mbox "aisaac@few.vu.nl" ;
+  .
+
+:EuropeanaLOD a void:Dataset ;
+  dcterms:title "Europeana Linked Data Pilot" ;
+  dcterms:description "RDF version of a subset of Europeana Metadata" ;
+  dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+  foaf:homepage <http://data.europeana.eu> ;
+  dcterms:source <http://www.europeana.eu> ;
+  dcterms:modified "2011-05-31"^^xsd:date ;
+  dcterms:publisher :Bernhard ;
+  dcterms:publisher :Antoine ;
+  void:exampleResource <http://data.europeana.eu/item/92037/25F9104787668C4B5148BE8E5AB8DBEF5BE5FE03> ;
+  void:triples 185491353 ;
+  void:subset :TEL ;
+  .
+  
+:TEL a void:Dataset ;
+  dcterms:title "The European Library" ;
+  void:subset :ONB ;
+  void:subset :SNL ;
+  void:subset :PNL ;
+  .
+
+:ONB a void:Dataset ;
+  dcterms:title "Austrian National Library" ;
+  eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92060_Ag_EU_TEL_a0478_Austria/output_xml/92060_Ag_EU_TEL_a0478_Austria.xml> ;
+  eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92061_Ag_EU_TEL_a0479_Austria/output_xml/92061_Ag_EU_TEL_a0479_Austria.xml> ;
+  eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92062_Ag_EU_TEL_a0480_Austria/output_xml/92062_Ag_EU_TEL_a0480_Austria.xml> ;
+  eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92063_Ag_EU_TEL_a0481_Austria/output_xml/92063_Ag_EU_TEL_a0481_Austria.xml> ;
+  eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92064_Ag_EU_TEL_a0482_Austria/output_xml/92064_Ag_EU_TEL_a0482_Austria.xml> ;
+  .
+
+:SNL a void:Dataset ;
+  dcterms:title "Serbian National Library" ;
+  eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92040_Ag_EU_TEL_a0155_Serbia/output_xml/92040_Ag_EU_TEL_a0155_Serbia.xml> ;
+  eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92041_Ag_EU_TEL_a0411_Serbia/output_xml/92041_Ag_EU_TEL_a0411_Serbia.xml> ;
+  eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92042_Ag_EU_TEL_a0412_Serbia/output_xml/92042_Ag_EU_TEL_a0412_Serbia.xml> ;
+  eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92044_Ag_EU_TEL_a0414_Serbia/output_xml/92044_Ag_EU_TEL_a0414_Serbia.xml> ;
+  eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92043_Ag_EU_TEL_a0413_Serbia/output_xml/92043_Ag_EU_TEL_a0413_Serbia.xml> ;
+  eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92045_Ag_EU_TEL_a0415_Serbia/output_xml/92045_Ag_EU_TEL_a0415_Serbia.xml> ;
+  eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92046_Ag_EU_TEL_a0416_Serbia/output_xml/92046_Ag_EU_TEL_a0416_Serbia.xml> ;
+  eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92047_Ag_EU_TEL_a0417_Serbia/output_xml/92047_Ag_EU_TEL_a0417_Serbia.xml> ;
+  eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92048_Ag_EU_TEL_a0418_Serbia/output_xml/92048_Ag_EU_TEL_a0418_Serbia.xml> ;
+  eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92049_Ag_EU_TEL_a0419_Serbia/output_xml/92049_Ag_EU_TEL_a0419_Serbia.xml> ;
+  eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92050_Ag_EU_TEL_a0420_Serbia/output_xml/92050_Ag_EU_TEL_a0420_Serbia.xml> ;
+  .
+
+:PNL a void:Dataset ;
+  dcterms:title "Portugal National Library" ;
+  eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92050_Ag_EU_TEL_a0420_Serbia/output_xml/92050_Ag_EU_TEL_a0420_Serbia.xml> ;
+  .
