@@ -1,5 +1,4 @@
 require 'nokogiri'
-require 'rexml/document'
 
 require_relative 'datasets.rb'
 
@@ -19,7 +18,7 @@ module ESE2EDM
       def export(recursive = false)
       
         tree = html_tree
-        doc = Nokogiri::HTML tree
+        doc = Nokogiri::HTML tree, "UTF-8"
 
       end
     
