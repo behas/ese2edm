@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require 'ese2edm/cli/conf_export.rb'
+
+runner = ESE2EDM::Conf::Runner.new(ARGV)
+runner.run
