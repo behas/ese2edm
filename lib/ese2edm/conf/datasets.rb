@@ -1,21 +1,20 @@
 require 'rdf'
 require 'rdf/raptor'
 
-require 'nokogiri'
-require 'rexml/document'
-
-module ESE2EDM  
+module ESE2EDM
+  
+  module Conf
     
     # A wrapper around the void dataset description for convenient access
     class Dataset
       
-      DEFAULT_DOWLNLOAD_BASE_DIR = "http://data.europeana.eu/download"
+      DEFAULT_DATASETS_PATH = "datasets"
+    
+      DEFAULT_LINKS_PATH = "links"
+      
+      DEFAULT_DOWNLOAD_URI = "http://data.europeana.eu/download"
       
       DEFAULT_VERSION = 1.0
-      
-      DEFAULT_DATASETS_PATH = "datasets"
-      
-      DEFAULT_LINKS_PATH = "links"
       
       attr_reader :uri
 
@@ -23,6 +22,8 @@ module ESE2EDM
       def initialize(args)
         @graph = args[:graph]
         @uri = args[:uri]
+        args[:version].nil? ? @version = DEFAULT_VERSION : @version = args[:version]
+        args[:downloadURI].nil? ? @downloadURI = DEFAULT_DOWNLOAD_URI : @downloadURI = args[:downloadURI]
       end
       
       # returns the dataset title
@@ -41,21 +42,16 @@ module ESE2EDM
         return xml_files
       end
       
-      # returns whether or not downloadable files are associated with that dataset
-      def files?
-        not xml_files.empty?
+      # returns the base URI of the dataset download directory
+      def dataset_baseURI
+        @downloadURI + "/" + @version.to_s + "/" + DEFAULT_DATASETS_PATH
       end
-      
-      # the returns the NT-file URIs associated with this dataset
-      def nt_files
-        nt_files = []
-        xml_files.each do |xml_file|
-          basename = File.basename(xml_file, ".xml")
-          nt_files << dataset_baseURI + "/nt/" + basename + ".nt"
-        end
-        return nt_files
+
+      # returns the base URI of the dataset download directory
+      def links_baseURI
+        @downloadURI + "/" + @version.to_s + "/" + DEFAULT_LINKS_PATH
       end
-      
+
       # returns all subsets of this dataset
       def subsets
         subsets = []
@@ -77,22 +73,19 @@ module ESE2EDM
         end
       end
       
-      # returns the base URI of the dataset download directory
-      def dataset_baseURI
-        DEFAULT_DOWLNLOAD_BASE_DIR + "/" + DEFAULT_VERSION.to_s + "/" + DEFAULT_DATASETS_PATH
+      # returns whether or not downloadable files are associated with that dataset
+      def files?
+        not xml_files.empty?
       end
-
-      # returns the base URI of the dataset download directory
-      def links_baseURI
-        DEFAULT_DOWLNLOAD_BASE_DIR + "/" + DEFAULT_VERSION + "/" + DEFAULT_LINKS_PATH
-      end
-      
-      # outputs datset info as HTML (recursively, if desired)
-      def to_html(recursive = false)
-        
-        tree = html_tree
-        doc = Nokogiri::HTML tree
-
+    
+      # the returns the NT-file URIs associated with this dataset
+      def file_uris(suffix)
+        file_uris = []
+        xml_files.each do |xml_file|
+          basename = File.basename(xml_file, ".xml")
+          file_uris << dataset_baseURI + "/#{suffix}/" + basename + ".#{suffix}"
+        end
+        return file_uris
       end
       
       # the dataset title is the default name 
@@ -106,38 +99,6 @@ module ESE2EDM
         Dataset.new :graph => graph, :uri => uri
       end
 
-    protected
-      
-      # outputs information on this dataset as HTML list
-      def html_tree
-        
-        list = <<-EOHTML
-        <ul>
-          <li>
-            <p>#{title}</p>
-        EOHTML
-        
-        if files?
-          list << "<p>"
-          nt_files.each do |nt_file|
-            list << <<-EOHTML 
-              <a href="#{nt_file}">nt</a>
-          EOHTML
-          end
-          list << "</p>"
-        end
-        
-        if subsets?
-          subsets.each do |subset|
-            list << subset.html_tree
-          end
-        end
-
-        list << "</li>"
-        list << "</ul>"
-
-      end
-
     private
       
       # yields property values for the URI subject and a given property
@@ -148,15 +109,15 @@ module ESE2EDM
         solutions = RDF::Query.execute(@graph) do
           pattern [:subject, predicate, :object]
         end
-        
+
         # filter the one having the dataset uri as subject
         solutions.filter(:subject  => RDF::URI(@uri)).each do |solution|
-          object = solution[:object].to_s
-          yield object
+          result = solution[:object].to_s
+          yield result
         end
       end
       
-    end # end of class dataset
+    end # dataset
     
     
     # Europeana-LOD specific terms used in void description
@@ -174,16 +135,5 @@ module ESE2EDM
       property :title
     end
     
+  end # Conf
 end 
-
-dataset = ESE2EDM::Dataset.load("../../../datasets/edm-datasets-1.0.ttl", "http://data.europeana.eu/void.ttl#EuropeanaLOD")
-
-p dataset.subsets
-
-# dataset.each_subset(true) do |dataset|
-#   puts dataset.uri
-#   puts dataset.title
-#   dataset.xml_files.each {|xml_file| puts xml_file}
-# end
-
-File.open("test.html", "w") {|file| file.puts dataset.to_html}
