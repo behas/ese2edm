@@ -4,10 +4,10 @@ require_relative '../conf/html_exporter.rb'
 
 module ESE2EDM
   
-  module Conf
+  module Cli
     
     # Defines options for dataset exports
-    class Options
+    class ESE2EDMDocOptions
 
         DEFAULT_OUTPUT_FORMAT = "HTML"
         
@@ -56,10 +56,10 @@ module ESE2EDM
     end # end of class options
     
     
-    class Runner
+    class ESE2EDMDocRunner
       
       def initialize(args)
-        @options = ESE2EDM::Conf::Options.new(args).options
+        @options = ESE2EDM::Cli::ESE2EDMDocOptions.new(args).options
         raise ArgumentError("No dataset file given") if args.length != 1
         @file = args[0]
       end

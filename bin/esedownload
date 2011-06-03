@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require 'ese2edm/cli/esedownload.rb'
+
+runner = ESE2EDM::Cli::DownloadRunner.new(ARGV)
+runner.run

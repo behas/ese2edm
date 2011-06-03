@@ -34,12 +34,13 @@ module ESE2EDM
       end
       
       # returns all XML file URIs associated with a data file
-      def xml_files
+      def xml_files(recursive = false)
         xml_files = []
         query_property_values :predicate => EULOD.xmlfile do |xml_file|
           xml_files << xml_file
         end
-        return xml_files
+        subsets.each {|subset| xml_files << subset.xml_files(recursive)} if recursive
+        return xml_files.flatten
       end
       
       # returns the base URI of the dataset download directory
