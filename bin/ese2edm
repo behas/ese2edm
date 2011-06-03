@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require 'ese2edm/cli/convert.rb'
+
+runner = ESE2EDM::Runner.new(ARGV)
+runner.run
