@@ -24,6 +24,7 @@
 :Antoine a foaf:Person ;
   rdfs:label "Antoine Isaac" ;
   foaf:mbox <mailto:aisaac@few.vu.nl> ;
+  owl:sameAs <http://www.few.vu.nl/~aisaac/foaf.rdf#me>
   .
 
 :EuropeanaLOD a void:Dataset ;
@@ -244,7 +245,7 @@
   .
 
 :UniPatras a void:Dataset ;
-  dcterms:title "Library & Information Center,University of Patras, Patras, Greece" ;
+  dcterms:title "Library & Information Center, University of Patras, Patras, Greece" ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/00501_L_GR_UniPatras_kosmopolis_dc/output_xml/00501_L_GR_UniPatras_kosmopolis_dc.xml> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/00502_L_GR_UniPatras_pleias_dc/output_xml/00502_L_GR_UniPatras_pleias_dc.xml> ;
   .
@@ -258,6 +259,6 @@
 #ESE test items
 
 :ESETest a void:Dataset ;
-  dcterms:title "Europeana Data Model (ESE) test items" ;
+  dcterms:title "Europeana Semantic Elements (ESE) test items" ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/00000_europeana_test_ese/output_xml/00000_europeana_test_ese.xml> ;
   .
