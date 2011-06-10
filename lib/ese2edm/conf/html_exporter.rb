@@ -30,16 +30,16 @@ module ESE2EDM
         list = "<ul><li><p>#{@dataset.title}</p>"
       
         if @dataset.files?
-          list << "<p>N-TRIPLE files: "
-          @dataset.file_uris("nt").each do |nt_file_uri|
+          list << "<p>NT files: "
+          @dataset.file_uris("nt").each_with_index do |nt_file_uri, index|
             filename = File.basename(nt_file_uri)
-            list << "<a href=\"#{nt_file_uri}\">#{filename}</a> "
+            list << "<a href=\"#{nt_file_uri}\">#{index + 1}</a> "
           end
           list << "</p>"
           list << "<p>RDF/XML files: "
-          @dataset.file_uris("rdf").each do |rdfxml_file_uri|
+          @dataset.file_uris("rdf").each_with_index do |rdfxml_file_uri, index|
             filename = File.basename(rdfxml_file_uri)
-            list << "<a href=\"#{rdfxml_file_uri}\">#{filename}</a> "
+            list << "<a href=\"#{rdfxml_file_uri}\">#{index + 1}</a> "
           end
           list << "</p>"
         end
