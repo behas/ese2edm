@@ -65,6 +65,7 @@
 
 :Austria a void:Dataset ;
   dcterms:title "Austria" ;
+  foaf:homepage <http://www.onb.ac.at/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92060_Ag_EU_TEL_a0478_Austria/output_xml/92060_Ag_EU_TEL_a0478_Austria.xml> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92061_Ag_EU_TEL_a0479_Austria/output_xml/92061_Ag_EU_TEL_a0479_Austria.xml> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92062_Ag_EU_TEL_a0480_Austria/output_xml/92062_Ag_EU_TEL_a0480_Austria.xml> ;
@@ -74,6 +75,7 @@
 
 :Serbia a void:Dataset ;
   dcterms:title "Serbia" ;
+  foaf:homepage <http://www.nb.rs/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92040_Ag_EU_TEL_a0155_Serbia/output_xml/92040_Ag_EU_TEL_a0155_Serbia.xml> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92041_Ag_EU_TEL_a0411_Serbia/output_xml/92041_Ag_EU_TEL_a0411_Serbia.xml> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92042_Ag_EU_TEL_a0412_Serbia/output_xml/92042_Ag_EU_TEL_a0412_Serbia.xml> ;
@@ -89,21 +91,25 @@
 
 :Portugal a void:Dataset ;
   dcterms:title "Portugal" ;
+  foaf:homepage <http://www.bnportugal.pt/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92050_Ag_EU_TEL_a0420_Serbia/output_xml/92050_Ag_EU_TEL_a0420_Serbia.xml> ;
   .
 
 :CzechRepublic a void:Dataset ;
   dcterms:title "Czech Republic" ;
+  foaf:homepage <http://www.nkp.cz/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92003_Ag_EU_TEL_a0078_TEL_NKP_kramerius/output_xml/92003_Ag_EU_TEL_a0078_TEL_NKP_kramerius.xml> ;
   .
 
 :Luxemburg a void:Dataset ;
   dcterms:title "Luxemburg" ;
+  foaf:homepage <http://www.eluxemburgensia.lu/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92038_Ag_EU_TEL_a0327_Luxemburg/output_xml/92038_Ag_EU_TEL_a0327_Luxemburg.xml> ;
   .
   
 :Slovenia a void:Dataset ;
   dcterms:title "Slovenia" ;
+  foaf:homepage <http://www.dlib.si/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92019_Ag_EU_TEL_a0425E/output_xml/92019_Ag_EU_TEL_a0425E.xml> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92020_Ag_EU_TEL_a0426/output_xml/92020_Ag_EU_TEL_a0426.xml> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92054_Ag_EU_TEL_a0309_Slovenia/output_xml/92054_Ag_EU_TEL_a0309_Slovenia.xml> ;
@@ -119,6 +125,7 @@
 
 :Hungary a void:Dataset ;
   dcterms:title "Hungary" ;
+  foaf:homepage <http://www.oszk.hu/index_en.htm> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92006_Ag_EU_TEL_a0107_TEL_OSZK_HEL/output_xml/92006_Ag_EU_TEL_a0107_TEL_OSZK_HEL.xml> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92007_Ag_EU_TEL_a0109_TEL_OSZK_map/output_xml/92007_Ag_EU_TEL_a0109_TEL_OSZK_map.xml> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92008_Ag_EU_TEL_a0110_TEL_OSZK_corvinas/output_xml/92008_Ag_EU_TEL_a0110_TEL_OSZK_corvinas.xml> ;
@@ -126,16 +133,19 @@
 
 :Netherlands a void:Dataset ;
   dcterms:title "Netherlands" ;
+  foaf:homepage <http://www.kb.nl/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92034_Ag_EU_TEL_a0027/output_xml/92034_Ag_EU_TEL_a0027.xml.gz> ;
   .
 
 :Ireland a void:Dataset ;
   dcterms:title "Ireland" ;
+  foaf:homepage <http://www.nli.ie/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92022_Ag_EU_TEL_a0430E/output_xml/92022_Ag_EU_TEL_a0430E.xml> ;
   .
 
 :UK a void:Dataset ;
   dcterms:title "United Kingdom" ;
+  foaf:homepage <http://www.bl.uk/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92037_Ag_EU_TEL_a0444_BritishLibrary/output_xml/92037_Ag_EU_TEL_a0444_BritishLibrary.xml> ;
   .
 
@@ -152,6 +162,7 @@
   
 :Hispana a void:Dataset ;
   dcterms:title "Hispana (Ministry of Culture – Spain)" ;
+  foaf:homepage <http://hispana.mcu.es/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09407a_Ag_ES_ELocal_esegen/output_xml/09407a_Ag_ES_ELocal_esegen.xml> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09407b_Ag_ES_ELocal_esebvph/output_xml/09407b_Ag_ES_ELocal_esebvph.xml> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09407c_Ag_ES_ELocal_eseceres/output_xml/09407c_Ag_ES_ELocal_eseceres.xml> ;
@@ -159,22 +170,26 @@
 
 :FBCP a void:Dataset ;
   dcterms:title "Federacja Bibliotek Cyfrowych Poland" ;
+  foaf:homepage <http://fbc.pionier.net.pl/owoc/list-libs> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09404_Ag_PL_ELocal/output_xml/09404_Ag_PL_ELocal.xml.gz> ;
   .
 
 :BMTKH a void:Dataset ;
   dcterms:title "Békés Megyei Tudásház es Könyvtár Hungary" ;
+  foaf:homepage <http://europeanalocal.bmk.hu/jetspeed/portal/collections.psml> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09408_Ag_HU_ELocal/output_xml/09408_Ag_HU_ELocal.xml> ;
   .
 
 :eLocalNO a void:Dataset ;
   dcterms:title "eLocal Norway called ABM-utvikling" ;
+  foaf:homepage <http://norvegiana2.delving.org/portal/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09414_Ag_NO_ELocal/output_xml/09414_Ag_NO_ELocal.xml> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09435_Ag_NO_ELocal/output_xml/09435_Ag_NO_ELocal.xml.gz> ;
   .
 
 :Erfgoedplus a void:Dataset ;
   dcterms:title "Erfgoedplus.be, province of Limburg Belgium" ;
+  foaf:homepage <http://www.erfgoedplus.be/start.html> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09421_Ag_BE_Elocal/output_xml/09421_Ag_BE_Elocal.xml> ;
   .
 
@@ -193,36 +208,43 @@
 
 :CultureShock a void:Dataset ;
   dcterms:title "Culture Shock" ;
+  foaf:homepage <http://www.cultureshock.org.uk/home.html> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09405e_Ag_UK_ELocal_TWAM-CS/output_xml/09405e_Ag_UK_ELocal_TWAM-CS.xml> ;
   .
 
 :Memorynet a void:Dataset ;
   dcterms:title "Memorynet" ;
+  foaf:homepage <http://www.twmuseums.org.uk/memorynet/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09405f_Ag_UK_ELocal_TWAM-MN/output_xml/09405f_Ag_UK_ELocal_TWAM-MN.xml> ;
   .
   
 :JewishLives a void:Dataset ;
   dcterms:title "Jewish Lives" ;
+  foaf:homepage <http://www.twmuseums.org.uk/jewishlives/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09405g_Ag_UK_ELocal_TWAM-JL/output_xml/09405g_Ag_UK_ELocal_TWAM-JL.xml> ;
   .
 
 :DiscoveringBewick a void:Dataset ;
   dcterms:title "Discovering Bewick" ;
+  foaf:homepage <http://www.twmuseums.org.uk/discoveringbewick/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09405h_Ag_UK_ELocal_TWAM-DB/output_xml/09405h_Ag_UK_ELocal_TWAM-DB.xml> ;
   .
 
 :TWAM a void:Dataset ;
   dcterms:title "Tyne & Wear Archive and museum" ;
+  foaf:homepage <http://www.twmuseums.org.uk/artonline/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09405i_Ag_UK_ELocal_TWAM-AOL/output_xml/09405i_Ag_UK_ELocal_TWAM-AOL.xml> ;
   .
   
 :Geofinder a void:Dataset ;
   dcterms:title "Geofinder" ;
+  foaf:homepage <http://www.twmuseums.org.uk/geofinder/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09405j_Ag_UK_ELocal_TWAM-GF/output_xml/09405j_Ag_UK_ELocal_TWAM-GF.xml> ;
   .
 
 :TWIM a void:Dataset ;
   dcterms:title "Tyne & Wear Imagine" ;
+  foaf:homepage <http://www.imagine.org.uk/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09405p_Ag_UK_ELocal_TyneWearImagine/output_xml/09405p_Ag_UK_ELocal_TyneWearImagine.xml> ;
   .
 
@@ -235,22 +257,26 @@
 
 :DFI a void:Dataset ;
   dcterms:title "Det Danske Filminstitut / Danish Film Institute" ;
+  foaf:homepage <http://www.dfi.dk/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/08601_Ag_EU_EFG_DFI/output_xml/08601_Ag_EU_EFG_DFI.xml> ;
   .
 
 :Filmarchiv a void:Dataset ;
   dcterms:title "Filmarchiv Austria" ;
+  foaf:homepage <http://filmarchiv.at/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/08603_Ag_EU_EFG_FilmArchiv/output_xml/08603_Ag_EU_EFG_FilmArchiv.xml> ;
   .
 
 :UniPatras a void:Dataset ;
   dcterms:title "Library & Information Center, University of Patras, Patras, Greece" ;
+  foaf:homepage <http://www.lis.upatras.gr/> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/00501_L_GR_UniPatras_kosmopolis_dc/output_xml/00501_L_GR_UniPatras_kosmopolis_dc.xml> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/00502_L_GR_UniPatras_pleias_dc/output_xml/00502_L_GR_UniPatras_pleias_dc.xml> ;
   .
 
 :SOCH a void:Dataset ;
   dcterms:title "Swedish Open Cultural Heritage" ;
+  foaf:homepage <http://www.raa.se/cms/extern/index.html> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/91622_Ag_SE_SwedishNationalHeritage_raa_kmb/output_xml/91622_Ag_SE_SwedishNationalHeritage_raa_kmb.xml> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/91611_Ag_SE_SwedishNationalHeritage_fornvannen/output_xml/91611_Ag_SE_SwedishNationalHeritage_fornvannen.xml> ;
   .
@@ -259,5 +285,6 @@
 
 :ESETest a void:Dataset ;
   dcterms:title "Europeana Semantic Elements (ESE) test items" ;
+  foaf:homepage <http://www.europeana.eu/portal/search.html?query=europeana_collectionName%3A+0000*> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/00000_europeana_test_ese/output_xml/00000_europeana_test_ese.xml> ;
   .
