@@ -79,10 +79,11 @@ module ESE2EDM
         not xml_files.empty?
       end
     
-      # the returns the NT-file URIs associated with this dataset
+      # returns the dataset file uris and appends a given suffix (e.g., .nt, .rdf)
       def file_uris(suffix)
         file_uris = []
         xml_files.each do |xml_file|
+          xml_file = File.basename(xml_file, ".gz") if xml_file.end_with?(".gz")
           basename = File.basename(xml_file, ".xml")
           file_uris << dataset_baseURI + "/#{suffix}/" + basename + ".#{suffix}"
         end
