@@ -31,13 +31,13 @@ module ESE2EDM
       
         if @dataset.files?
           list << "<p>NT files: "
-          @dataset.file_uris("nt.bz2").each_with_index do |nt_file_uri, index|
+          @dataset.file_uris("nt", "nt.bz2").each_with_index do |nt_file_uri, index|
             filename = File.basename(nt_file_uri)
             list << "<a href=\"#{nt_file_uri}\">#{index + 1}</a> "
           end
           list << "</p>"
           list << "<p>RDF/XML files: "
-          @dataset.file_uris("rdf.bz2").each_with_index do |rdfxml_file_uri, index|
+          @dataset.file_uris("rdf", "rdf.bz2").each_with_index do |rdfxml_file_uri, index|
             filename = File.basename(rdfxml_file_uri)
             list << "<a href=\"#{rdfxml_file_uri}\">#{index + 1}</a> "
           end

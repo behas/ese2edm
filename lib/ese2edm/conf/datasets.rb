@@ -80,12 +80,12 @@ module ESE2EDM
       end
     
       # returns the dataset file uris and appends a given suffix (e.g., .nt, .rdf)
-      def file_uris(suffix)
+      def file_uris(path, suffix)
         file_uris = []
         xml_files.each do |xml_file|
           xml_file = File.basename(xml_file, ".gz") if xml_file.end_with?(".gz")
           basename = File.basename(xml_file, ".xml")
-          file_uris << dataset_baseURI + "/#{suffix}/" + basename + ".#{suffix}"
+          file_uris << dataset_baseURI + "/#{path}/" + basename + ".#{suffix}"
         end
         return file_uris
       end
