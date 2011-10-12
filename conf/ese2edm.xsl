@@ -16,7 +16,7 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:dc="http://purl.org/dc/elements/1.1/"
  	xmlns:dct="http://purl.org/dc/terms/"
- 	xmlns:ens="http://www.europeana.eu/schemas/edm/"
+ 	xmlns:edm="http://www.europeana.eu/schemas/edm/"
  	xmlns:ese="http://www.europeana.eu"
  	xmlns:ore="http://www.openarchives.org/ore/terms/"
  	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -68,8 +68,8 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 
 		<!-- ...and produce a self-contained RDF/XML file out of it -->
 
-		<!-- Step1: OBJECT -->
-		<rdf:Description>
+		<!-- Step1: Provided Cultural Heritage Object -->
+		<edm:ProvidedCHO>
 			<xsl:attribute name="rdf:about"><xsl:copy-of select="$object_uri"/></xsl:attribute>
 			<foaf:isPrimaryTopicOf>
 				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$record_uri"/></xsl:attribute>
@@ -77,57 +77,57 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 			<foaf:isPrimaryTopicOf>
 				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$europeana_resourcemap_uri"/></xsl:attribute>
 			</foaf:isPrimaryTopicOf>
-		</rdf:Description>
+		</edm:ProvidedCHO>
 
 		<!-- Step1: PROVIDER AGGREGATION -->
 		<ore:Aggregation>
 			<xsl:attribute name="rdf:about"><xsl:copy-of select="$provider_agg_uri"/></xsl:attribute>
 				
-			<!-- Step 3: link provider aggregation with ens:Object/PhysicalThing -->
-			<ens:aggregatedCHO>
+			<!-- Step 3: link provider aggregation with edm:ProvidedCHO -->
+			<edm:aggregatedCHO>
 				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$object_uri"/></xsl:attribute>
-			</ens:aggregatedCHO>
+			</edm:aggregatedCHO>
 			
 			<!-- Mapping of original ESE fields -->
 			<xsl:for-each select="ese:dataProvider">
-				<ens:dataProvider><xsl:value-of select="."/></ens:dataProvider>
+				<edm:dataProvider><xsl:value-of select="."/></edm:dataProvider>
 			</xsl:for-each>
 			<xsl:for-each select="ese:isShownAt">
-				<ens:isShownAt>
+				<edm:isShownAt>
 					<xsl:attribute name="rdf:resource">
 						<xsl:value-of select="."/>
 					</xsl:attribute>
-				</ens:isShownAt>
+				</edm:isShownAt>
 			</xsl:for-each>
 			<xsl:for-each select="ese:isShownBy">
-				<ens:isShownBy>
+				<edm:isShownBy>
 					<xsl:attribute name="rdf:resource">
 						<xsl:value-of select="."/>
 					</xsl:attribute>
-				</ens:isShownBy>
+				</edm:isShownBy>
 			</xsl:for-each>
 			<xsl:for-each select="ese:object">
-				<ens:object>
+				<edm:object>
 					<xsl:attribute name="rdf:resource">
 						<xsl:value-of select="."/>
 					</xsl:attribute>
-				</ens:object>
+				</edm:object>
 			</xsl:for-each>
 			<xsl:for-each select="ese:provider">
-				<ens:provider><xsl:value-of select="."/></ens:provider>
+				<edm:provider><xsl:value-of select="."/></edm:provider>
 			</xsl:for-each>
 			<xsl:for-each select="dc:rights">
 				<dc:rights><xsl:value-of select="."/></dc:rights>
 			</xsl:for-each>
 			<xsl:for-each select="ese:rights">
-				<ens:rights>
+				<edm:rights>
 					<xsl:attribute name="rdf:resource">
 						<xsl:value-of select="."/>
 					</xsl:attribute>
-				</ens:rights>
+				</edm:rights>
 			</xsl:for-each>
 			<xsl:for-each select="ese:unstored">
-				<ens:unstored><xsl:value-of select="."/></ens:unstored>
+				<edm:unstored><xsl:value-of select="."/></edm:unstored>
 			</xsl:for-each>
 				
 		</ore:Aggregation>
@@ -137,7 +137,7 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 		<ore:Proxy>
 			<xsl:attribute name="rdf:about"><xsl:copy-of select="$provider_proxy_uri"/></xsl:attribute>
 				
-			<!-- Step 3: link provider provider proxy with ens:Object/PhysicalThing -->
+			<!-- Step 3: link provider provider proxy with edm:ProvidedCHO -->
 			<ore:proxyFor>
 				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$object_uri"/></xsl:attribute>
 			</ore:proxyFor>
@@ -149,7 +149,7 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 				
 			<!-- Mapping of original ESE fields -->
 			<xsl:for-each select="ese:type">
-				<ens:type><xsl:value-of select="."/></ens:type>
+				<edm:type><xsl:value-of select="."/></edm:type>
 			</xsl:for-each>
 				
 			<!-- deal with "other" corresponding properties -->
@@ -159,13 +159,13 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 
 			
 		<!-- Step 2: EUROPEANA AGGREGATION -->
-		<ens:EuropeanaAggregation>
+		<edm:EuropeanaAggregation>
 			<xsl:attribute name="rdf:about"><xsl:copy-of select="$europeana_agg_uri"/></xsl:attribute>
 				
-			<!-- Step 3: link europeana aggregation with ens:Object/PhysicalThing -->
-			<ens:aggregatedCHO>
+			<!-- Step 3: link europeana aggregation with edm:ProvidedCHO -->
+			<edm:aggregatedCHO>
 				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$object_uri"/></xsl:attribute>
-			</ens:aggregatedCHO>
+			</edm:aggregatedCHO>
 
 			<ore:isDescribedBy>
 				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$europeana_resourcemap_uri"/></xsl:attribute>
@@ -179,22 +179,22 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 			<!-- Step 4: dc:creator with "Europeana" as object (could be a fully fledged resource in a later mapping) -->
 			<dc:creator>Europeana</dc:creator>
 
-			<!-- Step 4: ens:landingPage with the URL of Europeana HTML object page as object -->
-			<ens:landingPage>
+			<!-- Step 4: edm:landingPage with the URL of Europeana HTML object page as object -->
+			<edm:landingPage>
 				<xsl:attribute name="rdf:resource">
 					<xsl:value-of select="$landing_page_uri"/>
 				</xsl:attribute>
-			</ens:landingPage>
+			</edm:landingPage>
 
 			<xsl:for-each select="ese:object">
 			  <xsl:if test='../ese:type'>
 			    <xsl:variable name="ese_type"><xsl:value-of select="../ese:type"/></xsl:variable>
 			    <xsl:variable name="thumbnail_uri" select="concat('http://europeanastatic.eu/api/image?uri=',.,'&amp;size=FULL_DOC&amp;type=',$ese_type)"/>			 
-				<ens:hasView>
+				<edm:hasView>
 					<xsl:attribute name="rdf:resource">
 						<xsl:copy-of select="$thumbnail_uri"/>
 					</xsl:attribute>
-				</ens:hasView>
+				</edm:hasView>
 				<foaf:depiction rdf:parseType="Resource">
 					<foaf:thumbnail>
 					  <xsl:attribute name="rdf:resource">
@@ -207,20 +207,20 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 			
 			<!-- Mapping of original ESE fields -->
 			<xsl:for-each select="ese:country">
-				<ens:country><xsl:value-of select="normalize-space(.)"/></ens:country>
+				<edm:country><xsl:value-of select="normalize-space(.)"/></edm:country>
 			</xsl:for-each>
 			<xsl:for-each select="ese:language">
-				<ens:language><xsl:value-of select="normalize-space(.)"/></ens:language>
+				<edm:language><xsl:value-of select="normalize-space(.)"/></edm:language>
 			</xsl:for-each>
 				
-		</ens:EuropeanaAggregation>
+		</edm:EuropeanaAggregation>
 		  
 
 		<!-- Step 2: EUROPEANA PROXY -->
 		<ore:Proxy>
 			<xsl:attribute name="rdf:about"><xsl:copy-of select="$europeana_proxy_uri"/></xsl:attribute>
 				
-			<!-- Step 3: link provider provider proxy with ens:Object/PhysicalThing -->
+			<!-- Step 3: link provider provider proxy with edm:ProvidedCHO -->
 			<ore:proxyFor>
 				<xsl:attribute name="rdf:resource"><xsl:copy-of select="$object_uri"/></xsl:attribute>
 			</ore:proxyFor>
@@ -232,10 +232,10 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 				
 			<!-- Mapping of original ESE fields -->
 			<xsl:for-each select="ese:userTag">
-				<ens:userTag><xsl:value-of select="."/></ens:userTag>
+				<edm:userTag><xsl:value-of select="."/></edm:userTag>
 			</xsl:for-each>
 			<xsl:for-each select="ese:year">
-				<ens:year><xsl:value-of select="."/></ens:year>
+				<edm:year><xsl:value-of select="."/></edm:year>
 			</xsl:for-each>
 				
 		</ore:Proxy>	
