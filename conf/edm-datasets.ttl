@@ -312,6 +312,13 @@ eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92037_Ag_EU
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/91611_Ag_SE_SwedishNationalHeritage_fornvannen/output_xml/91611_Ag_SE_SwedishNationalHeritage_fornvannen.xml> ;
   .
 
+:MuseoGalileo a void:Dataset ;
+  dcterms:title "Museo Galileo - Istituto e Museo di Storia della Scienza" ;
+  foaf:homepage <http://www.museogalileo.it/en/index.html> ;
+  eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/02301_Ag_IT_MG_catalogue/LOD/02301_Ag_IT_MuseoGalileo_catalogue.xml> ;
+  eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/02302_Ag_IT_MG_itineraries/output_xml/02302_Ag_IT_MG_itineraries.xml> ;
+ .
+
 #ESE test items
 
 :ESETest a void:Dataset ;
