@@ -1,7 +1,6 @@
 # ESE2EDM Converter
 
-
-These scripts provide the necessary infrastructure to convert a set of given source files expressed in the XML-based Europeana Semantic Elements (ESE) format into the RDF-based Europeana Data Model (EDM).
+ESE2EDM stands for a collection of scripts we use to convert given source files expressed in the XML-based Europeana Semantic Elements (ESE) format into the RDF-based Europeana Data Model (EDM).
 
 ## Quickstart
 
@@ -81,7 +80,7 @@ The Europeana raw ESE data files are stored in an SVN repository (http://sandbox
 
 If you have the necessary access privileges you can use the `download_files.rb` script to download these files via HTTP.
 
-    esedownload -o xml/ -u username -p password datasets/edm-datasets-1.0.txt
+    esedownload -o xml/ -u username -p password conf/edm-datasets.ttl
 
 
 
