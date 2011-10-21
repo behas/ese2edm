@@ -9,6 +9,8 @@ Make sure you have rapper and libxml2 installed on your system. The latter shoul
 Install ese2edm on your system:
 ---
 
+    git clone git://github.com/behas/ese2edm.git
+    gem build ese2edm.gemspec
     bundle install ese2edm
 
 Convert a single ESE XML file:
