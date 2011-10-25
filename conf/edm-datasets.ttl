@@ -45,6 +45,7 @@
   void:subset :ESETest ;
   void:subset :UniPatras ;
   void:subset :SOCH ;
+  void:subset :MuseoGalileo;
   .
   
 # Datasets from The European Library (TEL)
@@ -157,8 +158,8 @@ eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92037_Ag_EU
 :eLocal a void:Dataset ;
   dcterms:title "EuropeanaLocal" ;
   void:subset :Hispana ;
-  void:subset :FBCP ;
-  void:subset :BMTKH ;
+#  void:subset :FBCP ;
+#  void:subset :BMTKH ;
   void:subset :eLocalNO ;
   void:subset :Erfgoedplus ;
   .
@@ -181,8 +182,8 @@ eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/92037_Ag_EU
 #Wait for answer 
 #:BMTKH a void:Dataset ;
 # dcterms:title "Békés Megyei Tudásház es Könyvtár Hungary" ;
-#foaf:homepage <http://europeanalocal.bmk.hu/jetspeed/portal/collections.psml> ;
-#eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09408_Ag_HU_ELocal/output_xml/09408_Ag_HU_ELocal.xml> ;
+# foaf:homepage <http://europeanalocal.bmk.hu/jetspeed/portal/collections.psml> ;
+# eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09408_Ag_HU_ELocal/output_xml/09408_Ag_HU_ELocal.xml> ;
 #  .
 
  :eLocalNO a void:Dataset ;
