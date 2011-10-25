@@ -6,17 +6,14 @@ ESE2EDM stands for a collection of scripts we use to convert given source files 
 
 Make sure you have rapper and libxml2 installed on your system. The latter should be available on any Unix-based system (Mac OSX, Linux, etc.). Rapper can easily be installed via _apt-get_ on Debian-based systems or _homebrew_ on a Mac.
 
-Install ese2edm on your system:
----
+Install ese2edm:
 
     git clone git://github.com/behas/ese2edm.git
-    gem build ese2edm.gemspec
-    bundle install ese2edm
 
 Convert a single ESE XML file:
 ---
 
-    ese2edm -d examples/00000_europeana_test_ese.xml
+    ruby -I lib bin/ese2edm -d examples/00000_europeana_test_ese.xml
 	
 This takes the given ESE XML file `samexamplesples/00000_europeana_test_ese.xml` and produces an RDF/XML file `rdf/00000_europeana_test_ese.rdf`. The option `-d` means "create an N-TRIPLES dump file", which is stored in the base directory.
 
@@ -26,11 +23,11 @@ If you only need the RDF/XML files, simply skip the `-d` option.
 Convert multiple ESE XML files:
 ---
 
-    ese2edm -d examples/00000_europeana_test_ese.xml examples/00000_another_ese_file.xml
+    ruby -I lib bin/ese2edm -d examples/00000_europeana_test_ese.xml examples/00000_another_ese_file.xml
 	
 or simply
 
-    ese2edm -d xml/*.xml
+    ruby -I lib bin/ese2edm -d xml/*.xml
 	
 Does the same as the previous command but for more than one source file.
 
@@ -39,19 +36,19 @@ Does the same as the previous command but for more than one source file.
 
 Use the -h option to learn more about all the options you have
 
-    ese2edm -h
+    ruby -I lib bin/ese2edm -h
 
 Use the -s option to use a custom stylesheet for the conversion
 
-    ese2edm -s mystylesheet.xsl examples/00000_europeana_test_ese.xml
+    ruby -I lib bin/ese2edm -s mystylesheet.xsl examples/00000_europeana_test_ese.xml
 
 Use the -p option to output a pretty-printed RDF/XML document with XML indentations. Don't use this option for large files. It will slow down the conversion process.
 
-    ese2edm -p samples/00000_europeana_test_ese.xml
+    ruby -I lib bin/ese2edm -p samples/00000_europeana_test_ese.xml
 	
 Use the -o option to define a custom RDF/XML output directory
 
-    ese2edm -o somedir/rdf
+    ruby -I lib bin/ese2edm -o somedir/rdf
 
 
 ## Using the ese2edm.xsl stylesheet without the script
@@ -82,7 +79,7 @@ The Europeana raw ESE data files are stored in an SVN repository (http://sandbox
 
 If you have the necessary access privileges you can use the `download_files.rb` script to download these files via HTTP.
 
-    esedownload -o xml/ -u username -p password conf/edm-datasets.ttl
+    ruby -I lib bin/esedownload -o xml/ -u username -p password conf/edm-datasets.ttl
 
 
 
