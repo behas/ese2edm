@@ -15,7 +15,7 @@ Convert a single ESE XML file:
 
     ruby -I lib bin/ese2edm -d examples/00000_europeana_test_ese.xml
 	
-This takes the given ESE XML file `samexamplesples/00000_europeana_test_ese.xml` and produces an RDF/XML file `rdf/00000_europeana_test_ese.rdf`. The option `-d` means "create an N-TRIPLES dump file", which is stored in the base directory.
+This takes the given ESE XML file `examples/00000_europeana_test_ese.xml` and produces an RDF/XML file `rdf/00000_europeana_test_ese.rdf`. The option `-d` means "create an N-TRIPLES dump file", which is stored in the base directory.
 
 If you only need the RDF/XML files, simply skip the `-d` option.
 
