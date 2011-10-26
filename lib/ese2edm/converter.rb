@@ -25,6 +25,9 @@ module ESE2EDM
     # Controlls the overall conversion process
     def convert
     
+      # People might forget the trailing slash
+      @options[:output_dir] = @options[:output_dir] + "/" unless @options[:output_dir].end_with?("/")
+      
       # Make sure that the output directory exits
       if !File.directory? @options[:output_dir] 
         $LOG.info("Creating output directory #{@options[:output_dir]}...")
@@ -112,7 +115,8 @@ module ESE2EDM
       
         basename = File.basename(rdfxml_file, ".rdf")
         nt_file = output_dir + basename + ".nt"
-      
+        dump_file = output_dir + dump_file
+        
         $LOG.info("Creating N-TRIPLE file #{nt_file} ...")
         `rapper #{rdfxml_file} > #{nt_file}`
       

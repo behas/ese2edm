@@ -12,7 +12,7 @@ module ESE2EDM
 
         DEFAULT_OUTPUT_DIR = "rdf/"
         DEFAULT_STYLESHEET = "conf/ese2edm.xsl"
-        DEFAULT_NT_DUMP_FILE = DEFAULT_OUTPUT_DIR + "europeana_edm_#{Time.now.localtime.strftime("%Y-%m-%d")}.nt"
+        DEFAULT_NT_DUMP_FILE = "europeana_edm_#{Time.now.localtime.strftime("%Y-%m-%d")}.nt"
         DEFAULT_LOG_FILE = "ese2edm_#{Time.now.localtime.strftime("%Y-%m-%d")}.log"
         DEFAULT_BATCH_FILE = nil
         DEFAULT_PRETTY_PRINT = false
