@@ -42,10 +42,10 @@
   void:subset :eLocal ;
   void:subset :CultureGrid ;
   void:subset :EUFILM ;
-  void:subset :ESETest ;
-  void:subset :UniPatras ;
+  #void:subset :UniPatras ;
   void:subset :SOCH ;
   void:subset :MuseoGalileo;
+  void:subset :ESETest ;
   .
   
 # Datasets from The European Library (TEL)
@@ -292,7 +292,7 @@
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/08603_Ag_EU_EFG_FilmArchiv/output_xml/08603_Ag_EU_EFG_FilmArchiv.xml> ;
   .
 
-:Filmarchiv a void:Dataset ;
+:DIF a void:Dataset ;
   dcterms:title "Deutsches Filminstitut - DIF" ;
   foaf:homepage <http://www.deutsches-filminstitut.de/dframe12.htm> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/08604_Ag_EU_EFG_DIF/output_xml/08604_Ag_EU_EFG_DIF.xml> ;
