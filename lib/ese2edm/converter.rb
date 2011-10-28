@@ -112,13 +112,13 @@ module ESE2EDM
       
         basename = File.basename(rdfxml_file, ".rdf")
         nt_file = output_dir + basename + ".nt"
-        dump_file = output_dir + dump_file
+        df = output_dir + dump_file
         
         $LOG.info("Creating N-TRIPLE file #{nt_file} ...")
         `rapper #{rdfxml_file} > #{nt_file}`
       
-        $LOG.info("Adding #{nt_file} to #{dump_file} ...")
-        `cat #{nt_file} >> #{dump_file}`
+        $LOG.info("Adding #{nt_file} to #{df} ...")
+        `cat #{nt_file} >> #{df}`
               
       end
 
