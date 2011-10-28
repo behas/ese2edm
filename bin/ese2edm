@@ -1,5 +1,15 @@
 #!/usr/bin/env ruby
-require 'ese2edm/cli/ese2edm.rb'
+
+# The main ese2edm utility for converting ESE data into EDM.
+#
+# It takes a given set of XML documents as input and converts them to EDM/RDF.
+
+require "rubygems"
+require "bundler/setup"
+
+$:.unshift(File.join(File.dirname(__FILE__), "/../lib"))
+
+require "ese2edm"
 
 runner = ESE2EDM::Cli::ESE2EDMRunner.new(ARGV)
 runner.run

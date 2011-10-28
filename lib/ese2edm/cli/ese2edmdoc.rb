@@ -1,7 +1,3 @@
-require 'optparse'
-
-require_relative '../conf/html_exporter.rb'
-
 module ESE2EDM
   
   module Cli

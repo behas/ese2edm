@@ -1,8 +1,3 @@
-require 'logger'
-require 'optparse'
-
-require_relative '../converter.rb'
-
 module ESE2EDM
   
   module Cli

@@ -1,7 +1,3 @@
-require 'nokogiri'
-
-require_relative 'datasets.rb'
-
 module ESE2EDM
   
   module Conf

@@ -1,5 +1,14 @@
 #!/usr/bin/env ruby
-require 'ese2edm/cli/ese2edmdoc.rb'
+
+# A utility for generating an HTML document containing the list of data contributors
+# and produced datasets.
+
+require "rubygems"
+require "bundler/setup"
+
+$:.unshift(File.join(File.dirname(__FILE__), "/../lib"))
+
+require "ese2edm"
 
 runner = ESE2EDM::Cli::ESE2EDMDocRunner.new(ARGV)
 runner.run

@@ -1,5 +1,13 @@
 #!/usr/bin/env ruby
-require 'ese2edm/cli/esedownload.rb'
+
+# A utility for downloading ESE data from Europeana's raw-data repository.
+
+require "rubygems"
+require "bundler/setup"
+
+$:.unshift(File.join(File.dirname(__FILE__), "/../lib"))
+
+require "ese2edm"
 
 runner = ESE2EDM::Cli::DownloadRunner.new(ARGV)
 runner.run

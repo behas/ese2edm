@@ -1,7 +1,3 @@
-require 'optparse'
-
-require_relative '../util/downloader.rb'
-
 module ESE2EDM
   
   module Cli

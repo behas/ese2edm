@@ -1,5 +1,5 @@
 Gemfile.lock
-ese2edm-1.0.gem
+ese2edm-*.gem
 enrichment
 xml/
 .DS_Store

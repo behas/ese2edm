@@ -1,6 +1,3 @@
-require 'find'
-require 'fileutils'
-
 # This class performs the actual ESE2EDM conversion.
 # It takes the given ESE XML input files, converts each file into ESE RDF/XML by applying an XSLT transformation.
 # The resulting files can optionally be combined into a single N-TRIPLES dump file

@@ -1,6 +1,3 @@
-require 'rdf'
-require 'rdf/raptor'
-
 module ESE2EDM
   
   module Conf
@@ -14,7 +11,7 @@ module ESE2EDM
       
       DEFAULT_DOWNLOAD_URI = "http://data.europeana.eu/download"
       
-      DEFAULT_VERSION = 1.0
+      DEFAULT_VERSION = 1.1
       
       attr_reader :uri
 
