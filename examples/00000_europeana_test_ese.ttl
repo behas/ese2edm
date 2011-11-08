@@ -1,0 +1,60 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix edm: <http://www.europeana.eu/schemas/edm/> .
+@prefix ese: <http://www.europeana.eu> .
+@prefix ore: <http://www.openarchives.org/ore/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xhtml: <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix str: <http://exslt.org/strings> .
+
+<http://data.europeana.eu/aggregation/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154>
+    dc:creator "Europeana" ;
+    edm:aggregatedCHO <http://data.europeana.eu/item/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> ;
+    edm:country "cyprus" ;
+    edm:landingPage <http://www.europeana.eu/portal/record/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154.html> ;
+    edm:language "gr" ;
+    ore:aggregates <http://data.europeana.eu/aggregation/provider/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> ;
+    ore:isDescribedBy <http://data.europeana.eu/rm/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> ;
+    a edm:EuropeanaAggregation .
+
+<http://data.europeana.eu/aggregation/provider/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154>
+    dc:rights "Cyprus Archaeological Museum" ;
+    edm:aggregatedCHO <http://data.europeana.eu/item/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> ;
+    edm:dataProvider "Cyprus Archaeological Museum" ;
+    edm:isShownBy <http://www.mcw.gov.cy/mcw/da/da.nsf/All/8308A7AB9CA6CB5EC22574CC003FF5E1/$file/02-Lemba-Lakkous-Lady.jpg?OpenElement> ;
+    edm:provider "Cyprus Library" ;
+    edm:rights <http://creativecommons.org/licenses/by/3.0/nl/> ;
+    a ore:Aggregation .
+
+<http://data.europeana.eu/item/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154>
+    a edm:ProvidedCHO ;
+    foaf:isPrimaryTopicOf <http://data.europeana.eu/rm/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154>, <http://www.europeana.eu/resolve/record/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> .
+
+<http://data.europeana.eu/proxy/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154>
+    ore:proxyFor <http://data.europeana.eu/item/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> ;
+    ore:proxyIn <http://data.europeana.eu/aggregation/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> ;
+    a ore:Proxy .
+
+<http://data.europeana.eu/proxy/provider/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154>
+    dc:description "Stone vessel from Choirokoitia with embossed decoration of the Aceramic Neolithic Ι period"@en, "Λίθινο ειδώλιο από τη θέση Λέμπα – Λάκκοι, Χαλκολιθικής περιόδου (μέσα 3ης χιλιετίας π. Χ.)" ;
+    dc:format "Image/tiff" ;
+    dc:identifier "02-Lemba-Lakkous-Lady\\.tif" ;
+    dc:publisher "Cyprus Archaeological Museum" ;
+    dc:subject "Cyprus--Antiquities", "Excavations (Archaeology)--Cyprus--Lempa"@en ;
+    dc:title "Stone figurine", "Λίθινο ειδώλιο" ;
+    dc:type "Image" ;
+    dct:temporal "mid 3rd millenium B.C." ;
+    edm:type "IMAGE" ;
+    ore:proxyFor <http://data.europeana.eu/item/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> ;
+    ore:proxyIn <http://data.europeana.eu/aggregation/provider/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> ;
+    a ore:Proxy .
+
+<http://data.europeana.eu/rm/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154>
+    dc:contributor "Cyprus Archaeological Museum", "Cyprus Library" ;
+    dc:publisher "Europeana" ;
+    ore:describes <http://data.europeana.eu/aggregation/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> ;
+    a ore:ResourceMap ;
+    xhtml:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    foaf:primaryTopic <http://data.europeana.eu/item/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> .
+

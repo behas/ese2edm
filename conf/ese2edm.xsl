@@ -96,21 +96,21 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 			<xsl:for-each select="ese:isShownAt">
 				<edm:isShownAt>
 					<xsl:attribute name="rdf:resource">
-						<xsl:value-of select="str:encode-uri(., true())"/>
+						<xsl:value-of select="str:encode-uri(., false())"/>
 					</xsl:attribute>
 				</edm:isShownAt>
 			</xsl:for-each>
 			<xsl:for-each select="ese:isShownBy">
 				<edm:isShownBy>
 					<xsl:attribute name="rdf:resource">
-						<xsl:value-of select="str:encode-uri(., true())"/>
+						<xsl:value-of select="str:encode-uri(., false())"/>
 					</xsl:attribute>
 				</edm:isShownBy>
 			</xsl:for-each>
 			<xsl:for-each select="ese:object">
 				<edm:object>
 					<xsl:attribute name="rdf:resource">
-						<xsl:value-of select="str:encode-uri(., true())"/>
+						<xsl:value-of select="str:encode-uri(., false())"/>
 					</xsl:attribute>
 				</edm:object>
 			</xsl:for-each>
@@ -123,7 +123,7 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 			<xsl:for-each select="ese:rights">
 				<edm:rights>
 					<xsl:attribute name="rdf:resource">
-						<xsl:value-of select="str:encode-uri(., true())"/>
+						<xsl:value-of select="str:encode-uri(., false())"/>
 					</xsl:attribute>
 				</edm:rights>
 			</xsl:for-each>
@@ -190,7 +190,7 @@ Authors: Bernhard Haslhofer (University of Vienna), Antoine Isaac (VU Amsterdam)
 			<xsl:for-each select="ese:object">
 			  <xsl:if test='../ese:type'>
 			    <xsl:variable name="ese_type"><xsl:value-of select="../ese:type"/></xsl:variable>
-			    <xsl:variable name="thumbnail_uri" select="concat('http://europeanastatic.eu/api/image?uri=',.,'&amp;size=FULL_DOC&amp;type=',$ese_type)"/>			 
+			    <xsl:variable name="thumbnail_uri" select="concat('http://europeanastatic.eu/api/image?uri=',str:encode-uri(., true()),'&amp;size=FULL_DOC&amp;type=',$ese_type)"/>			 
 				<edm:hasView>
 					<xsl:attribute name="rdf:resource">
 						<xsl:copy-of select="$thumbnail_uri"/>

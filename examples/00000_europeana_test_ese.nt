@@ -1,7 +1,8 @@
+<http://data.europeana.eu/item/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.europeana.eu/schemas/edm/ProvidedCHO> .
 <http://data.europeana.eu/item/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <http://www.europeana.eu/resolve/record/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> .
 <http://data.europeana.eu/item/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <http://data.europeana.eu/rm/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> .
 <http://data.europeana.eu/aggregation/provider/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openarchives.org/ore/terms/Aggregation> .
-<http://data.europeana.eu/aggregation/provider/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://www.openarchives.org/ore/terms/aggregatedCHO> <http://data.europeana.eu/item/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> .
+<http://data.europeana.eu/aggregation/provider/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://www.europeana.eu/schemas/edm/aggregatedCHO> <http://data.europeana.eu/item/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> .
 <http://data.europeana.eu/aggregation/provider/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://www.europeana.eu/schemas/edm/dataProvider> "Cyprus Archaeological Museum" .
 <http://data.europeana.eu/aggregation/provider/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://www.europeana.eu/schemas/edm/isShownBy> <http://www.mcw.gov.cy/mcw/da/da.nsf/All/8308A7AB9CA6CB5EC22574CC003FF5E1/$file/02-Lemba-Lakkous-Lady.jpg?OpenElement> .
 <http://data.europeana.eu/aggregation/provider/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://www.europeana.eu/schemas/edm/provider> "Cyprus Library" .
@@ -23,7 +24,7 @@
 <http://data.europeana.eu/proxy/provider/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://purl.org/dc/elements/1.1/subject> "Cyprus--Antiquities" .
 <http://data.europeana.eu/proxy/provider/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://purl.org/dc/elements/1.1/type> "Image" .
 <http://data.europeana.eu/aggregation/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.europeana.eu/schemas/edm/EuropeanaAggregation> .
-<http://data.europeana.eu/aggregation/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://www.openarchives.org/ore/terms/aggregatedCHO> <http://data.europeana.eu/item/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> .
+<http://data.europeana.eu/aggregation/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://www.europeana.eu/schemas/edm/aggregatedCHO> <http://data.europeana.eu/item/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> .
 <http://data.europeana.eu/aggregation/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://www.openarchives.org/ore/terms/isDescribedBy> <http://data.europeana.eu/rm/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> .
 <http://data.europeana.eu/aggregation/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://www.openarchives.org/ore/terms/aggregates> <http://data.europeana.eu/aggregation/provider/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> .
 <http://data.europeana.eu/aggregation/europeana/00000/E2AAA3C6DF09F9FAA6F951FC4C4A9CC80B5D4154> <http://purl.org/dc/elements/1.1/creator> "Europeana" .
