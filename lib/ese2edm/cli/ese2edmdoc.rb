@@ -21,7 +21,7 @@ module ESE2EDM
         def parse(argv)
 
           optParser = OptionParser.new do |opts|
-            opts.banner = "Usage: confexport [options] dataset.ttl"
+            opts.banner = "Usage: ese2edm-doc [options] dataset.ttl"
 
             @options[:output_file] = DEFAULT_OUTPUT_FILE
             opts.on("-o", "--output-file <output_file>", "The output file")  do |output_file|
