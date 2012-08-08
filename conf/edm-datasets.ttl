@@ -166,7 +166,7 @@
  
 #One dataset removed 
 :Hispana a void:Dataset ;
-  dcterms:title "Hispana (Ministry of Culture – Spain)" ;
+  dcterms:title "Hispana (Ministry of Culture - Spain)" ;
   foaf:homepage <http://hispana.mcu.es/es/estaticos/contenido.cmd?pagina=estaticos/presentacion/> ;
  #eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09407c_Ag_ES_ELocal_eseceres/output_xml/09407c_Ag_ES_ELocal_eseceres.xml> ;
   eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09407a_Ag_ES_ELocal_esegen/output_xml/09407a_Ag_ES_ELocal_esegen.xml> ;
@@ -187,7 +187,7 @@
 #  .
 
 :eLocalNO a void:Dataset ;
-  dcterms:title "eLocal Norway called ABM-utvikling" ;
+  dcterms:title "eLocal Norway - ABM-utvikling/Norsk Kulturråd" ;
   foaf:homepage <http://norvegiana2.delving.org/portal/> ;
 #eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09414_Ag_NO_ELocal/output_xml/09414_Ag_NO_ELocal.xml> ;
 #eulod:xmlfile <http://sandbox08.isti.cnr.it/svn/trunk/sourcedata/xml/09435_Ag_NO_ELocal/output_xml/09435_Ag_NO_ELocal.xml.gz> ;
